@@ -1,0 +1,107 @@
+
+
+/************* Estilos Globales *****************/
+
+.grid-container{
+    padding-left:               10px;
+    padding-right:              10px;
+    margin-left:                auto;
+    margin-right:               auto;
+}
+
+img{
+    width:                      100%   
+}
+/************* Media Queries *****************/
+
+@media (min-width: 1px) and (max-width:767px){
+    .grid-container >[class^="grid-"]{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    .hidden-mobile{
+        display: none;
+    }
+}
+
+@media (min-width: 768px){
+    
+    /************* Estilo de columnas *****************/
+    
+    .grid-container > [class^="grid-"]{
+        float:                  left;
+        min-height:             1px;
+        padding-left:           10px;
+        padding-right:          10px;
+        margin-left:            2%;
+    }
+    
+    .grid-container > [class^="grid-"]:first-child{
+        margin-left:            0;    
+    }
+    
+    .grid-container > [class^="grid-"]:last-child{
+        float:                  right;    
+    }
+ 
+    /*********** Las columnas son de 65px de ancho, el espacio entre columnas (gutter) es de 20px ****************/
+    /*********** La suma de 12 columnas de 65px nos da 780, mientras que la suma de 11 espacios de 20 pixeles nos da 220px */ 
+    /*********** 780 mas 220px nos da 1000px esta suma es nuestro contexto, para sacar la medida de cada una de nuestras columnas*/ 
+    /*********** Lo que vamos a hacer es dividir lo que mide cada columna, dividirlo entre nuestro contexto y mutiplicarlo X 100*/ 
+    
+    
+        .grid-1{
+            width:                  6.5%;   
+        }
+        .grid-2{
+            width:                  15%;   
+        }
+        .grid-3{
+            width:                  23.5%   
+        }
+        .grid-4{
+            width:                  32%   
+        }
+        .grid-5{
+            width:                  40.5%   
+            }
+        .grid-6{
+            width:                  49%   
+            }
+        .grid-7{
+            width:                  57.5%;   
+        }
+        .grid-8{
+            width:                  66%;   
+        }
+        .grid-9{
+            width:                  74.5%   
+        }
+        .grid-10{
+            width:                  83%   
+        }
+        .grid-11{
+            width:                  91.5%   
+        }
+        .grid-12{
+            width:                  100%   
+        }
+    
+    /*********** Clearfix para los floats *******************/
+    
+    .grupo:after, .grid-container:after{
+        content:                    " ";
+        display:                    table;
+        clear:                      both;
+    }   
+}
+
+@media (min-width:1200px){
+ 
+    .grid-container{
+        max-width:                  1100px;   
+    }
+    
+    
+}
